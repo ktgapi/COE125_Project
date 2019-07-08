@@ -8,8 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import resources
-import csv
-from datalogic import *
+from datalogic import DataLogic
 
 class Sign_Up(object):
     def setupUi(self, Form):
@@ -128,6 +127,7 @@ class Sign_Up(object):
         self.FNLine.textChanged['QString'].connect(self.label_5.clear)
         self.ConPassLine.textChanged['QString'].connect(self.label_5.clear)
         QtCore.QMetaObject.connectSlotsByName(Form)
+        self.Dl = DataLogic()
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -152,15 +152,14 @@ class Sign_Up(object):
                  if password != password2 or password.isspace() is True or password == "":
                      self.label_5.setText("Passwords invalid or do not match! Try again")
                  else:
-                    dl.insertData(username, password, fullname)
+                    self.Dl.insertData(username, password, fullname)
                     self.label_5.setText("Registration Successful")
-    def UserCheck(self,username):
-        found = dl.isUserExist(username)
+    def UserCheck (self, Username):
+        found = self.Dl.isUserExist(Username)
         return found
 
 if __name__ == "__main__":
     import sys
-    dl = DataLogic()
     app = QtWidgets.QApplication(sys.argv)
     Form = QtWidgets.QWidget()
     ui = Sign_Up()

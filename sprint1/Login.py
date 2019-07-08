@@ -9,7 +9,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from SignUp import Sign_Up
 import resources
-from datalogic import *
+from datalogic import DataLogic
 index = 0
 
 class Log_In(object):

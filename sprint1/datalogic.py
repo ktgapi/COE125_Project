@@ -6,6 +6,7 @@ class DataLogic:
 		self.cursor = self.connection.cursor()
 		self.connection.row_factory = sqlite3.Row
 		self.userTemp = None
+
 	def isUserExist(self,user):
 		self.cursor.execute("SELECT * FROM accounts ")
 		rows = self.cursor.fetchall()
@@ -30,4 +31,5 @@ class DataLogic:
 					self.connection.commit()
 					return mess
 	def insertData(self,user,pw,fn):
-		cursor.execute('Insert INTO accounts VALUES(?)',(user,pw,fn))
+		self.cursor.execute('Insert INTO accounts(USERNAME,PASSWORD,FULLNAME) VALUES(?,?,?)',(user,pw,fn))
+		self.connection.commit()
