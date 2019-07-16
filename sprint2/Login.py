@@ -9,6 +9,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from SignUp import Sign_Up
 import resources
+from datalogic import DataLogic
 index = 0
 
 class Log_In(object):
@@ -146,12 +147,13 @@ class Log_In(object):
             self.NextButton.clicked.disconnect(self.login)
             self.NextButton.clicked.connect(self.PassCheck) 
     def UserCheck(self,username):
-        found = isUserExist(username)
+        found = dl.isUserExist(username)
         return found
     def PassCheck(self):
         pw = self.LineEdit.text()
-        mess = isMatch(pw)
-        if (pw == "Incorrect Password"):
+        mess = dl.isMatch(pw)
+        #if (pw == "Incorrect Password"):
+        if (mess == ""):
             self.label_3.setText("Incorrect Password")      
         else:
             self.label_3.setText("Welcome "+ mess)
@@ -159,6 +161,7 @@ class Log_In(object):
 
 if __name__ == "__main__":
     import sys
+    dl = DataLogic()
     app = QtWidgets.QApplication(sys.argv)
     Form = QtWidgets.QWidget()
     ui = Log_In()
