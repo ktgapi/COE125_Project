@@ -21,15 +21,17 @@ class DataLogic:
 	def isMatch(self, pw,user):
 		self.cursor.execute("SELECT * FROM accounts ")
 		rows = self.cursor.fetchall()
-		mess = "Incorrect Password"
+		#mess = "Incorrect Password"
 		for row in rows:
 			if (str(row[1]) == user):
-				if(str(row[2] == pw)):
+				#if(str(row[2] == pw)):
+				if(str(row[2]) == pw):
 					self.connection.commit()
 					return str(row[3])
 				else:
 					self.connection.commit()
-					return mess
+					return ""
+					#return mess
 	def insertData(self,user,pw,fn):
 		self.cursor.execute('Insert INTO accounts(USERNAME,PASSWORD,FULLNAME) VALUES(?,?,?)',(user,pw,fn))
 		self.connection.commit()
