@@ -9,6 +9,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import resources
 from datalogic import DataLogic
+import csv
 
 class Sign_Up(object):
     def setupUi(self, Form):
@@ -157,6 +158,21 @@ class Sign_Up(object):
     def UserCheck (self, Username):
         found = self.Dl.isUserExist(Username)
         return found
+                     newData = [username, password, fullname]
+                     with open('Accounts.csv', 'a', newline='') as f:
+                         writer = csv.writer(f)
+                         writer.writerow(newData)
+                         self.label_5.setText("Registration Successful")
+    def UserCheck(self,username):
+        found = False
+        global index
+        with open('Accounts.csv', 'r') as f:
+            reader = csv.DictReader(f)
+            for line in reader:
+                if line['Username'] == username:
+                    found = True
+                    index = reader.line_num
+        return found            
 
 if __name__ == "__main__":
     import sys
