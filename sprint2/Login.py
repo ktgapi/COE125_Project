@@ -152,8 +152,8 @@ class Log_In(object):
     def PassCheck(self):
         pw = self.LineEdit.text()
         mess = dl.isMatch(pw)
-        if (pw == "Incorrect Password"):
-            self.label_3.setText("Incorrect Password")      
+        if (mess == "Incorrect Password"):
+            self.label_3.setText(mess)      
         else:
             self.label_3.setText("Welcome "+ mess)
 
