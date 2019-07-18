@@ -2,23 +2,46 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>570</height>
+    <width>805</width>
+    <height>606</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>805</width>
+    <height>606</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>805</width>
+    <height>606</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Serif</family>
+    <pointsize>12</pointsize>
+    <weight>50</weight>
+    <bold>false</bold>
+   </font>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Text Recognition</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGraphicsView" name="graphicsView">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>40</y>
+      <y>70</y>
       <width>381</width>
       <height>211</height>
      </rect>
@@ -28,7 +51,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>260</y>
+      <y>290</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -41,7 +64,7 @@
     <property name="geometry">
      <rect>
       <x>300</x>
-      <y>260</y>
+      <y>290</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -54,7 +77,7 @@
     <property name="geometry">
      <rect>
       <x>410</x>
-      <y>40</y>
+      <y>70</y>
       <width>381</width>
       <height>211</height>
      </rect>
@@ -64,9 +87,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>300</y>
+      <y>330</y>
       <width>781</width>
-      <height>171</height>
+      <height>181</height>
      </rect>
     </property>
    </widget>
@@ -74,7 +97,7 @@
     <property name="geometry">
      <rect>
       <x>410</x>
-      <y>260</y>
+      <y>290</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -87,7 +110,7 @@
     <property name="geometry">
      <rect>
       <x>700</x>
-      <y>260</y>
+      <y>290</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -100,7 +123,7 @@
     <property name="geometry">
      <rect>
       <x>560</x>
-      <y>260</y>
+      <y>290</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -113,8 +136,8 @@
     <property name="geometry">
      <rect>
       <x>350</x>
-      <y>480</y>
-      <width>89</width>
+      <y>520</y>
+      <width>101</width>
       <height>25</height>
      </rect>
     </property>
@@ -126,7 +149,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>20</y>
+      <y>50</y>
       <width>281</width>
       <height>17</height>
      </rect>
@@ -139,7 +162,7 @@
     <property name="geometry">
      <rect>
       <x>410</x>
-      <y>20</y>
+      <y>50</y>
       <width>281</width>
       <height>17</height>
      </rect>
@@ -148,18 +171,57 @@
      <string>Capture Image via Webcam</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>10</y>
+      <width>491</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>22</height>
+     <width>805</width>
+     <height>24</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuAccount">
+    <property name="title">
+     <string>Account</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="actionSignOut"/>
+   </widget>
+   <addaction name="menuAccount"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionName">
+   <property name="text">
+    <string>Name</string>
+   </property>
+  </action>
+  <action name="actionSignOut">
+   <property name="text">
+    <string>Sign Out</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
