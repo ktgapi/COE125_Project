@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>805</width>
-    <height>606</height>
+    <width>820</width>
+    <height>673</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -21,8 +21,8 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>805</width>
-    <height>606</height>
+    <width>1000</width>
+    <height>1000</height>
    </size>
   </property>
   <property name="font">
@@ -40,8 +40,8 @@
    <widget class="QGraphicsView" name="graphicsView">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>70</y>
+      <x>20</x>
+      <y>100</y>
       <width>381</width>
       <height>211</height>
      </rect>
@@ -50,8 +50,8 @@
    <widget class="QPushButton" name="pb_Browse">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>290</y>
+      <x>20</x>
+      <y>320</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -63,8 +63,8 @@
    <widget class="QPushButton" name="pb_Read">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>290</y>
+      <x>310</x>
+      <y>320</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -76,8 +76,8 @@
    <widget class="QGraphicsView" name="graphicsView_2">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>70</y>
+      <x>420</x>
+      <y>100</y>
       <width>381</width>
       <height>211</height>
      </rect>
@@ -86,8 +86,8 @@
    <widget class="QTextBrowser" name="textBrowser">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>330</y>
+      <x>20</x>
+      <y>360</y>
       <width>781</width>
       <height>181</height>
      </rect>
@@ -96,8 +96,8 @@
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>290</y>
+      <x>420</x>
+      <y>320</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -109,8 +109,8 @@
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>700</x>
-      <y>290</y>
+      <x>710</x>
+      <y>320</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -122,8 +122,8 @@
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>290</y>
+      <x>570</x>
+      <y>320</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -135,8 +135,8 @@
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>520</y>
+      <x>370</x>
+      <y>560</y>
       <width>101</width>
       <height>25</height>
      </rect>
@@ -148,10 +148,10 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>50</y>
+      <x>20</x>
+      <y>60</y>
       <width>281</width>
-      <height>17</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -161,10 +161,10 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>50</y>
+      <x>420</x>
+      <y>60</y>
       <width>281</width>
-      <height>17</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -174,21 +174,24 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>10</y>
-      <width>491</width>
+      <x>570</x>
+      <y>0</y>
+      <width>251</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>18</pointsize>
+      <pointsize>11</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
     </property>
    </widget>
   </widget>
@@ -197,7 +200,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>805</width>
+     <width>820</width>
      <height>24</height>
     </rect>
    </property>
@@ -207,7 +210,7 @@
     </property>
     <addaction name="separator"/>
     <addaction name="separator"/>
-    <addaction name="actionSignOut"/>
+    <addaction name="actionLogOut"/>
    </widget>
    <addaction name="menuAccount"/>
   </widget>
@@ -217,12 +220,14 @@
     <string>Name</string>
    </property>
   </action>
-  <action name="actionSignOut">
+  <action name="actionLogOut">
    <property name="text">
-    <string>Sign Out</string>
+    <string>Log out</string>
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../Desktop/SoftEng/Pics.qrc"/>
+ </resources>
  <connections/>
 </ui>
