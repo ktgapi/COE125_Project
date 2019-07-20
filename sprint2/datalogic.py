@@ -5,6 +5,7 @@ class DataLogic:
 		self.connection = sqlite3.connect("accounts.db")
 		self.cursor = self.connection.cursor()
 		self.connection.row_factory = sqlite3.Row
+		#self.userTemp = None
 		self.userTemp = None
 
 	def isUserExist(self,user):
@@ -18,6 +19,14 @@ class DataLogic:
 		self.connection.commit()
 		return False
 
+	def isMatch(self, pw,user):
+		self.cursor.execute("SELECT * FROM accounts ")
+		rows = self.cursor.fetchall()
+		#mess = "Incorrect Password"
+		for row in rows:
+			if (str(row[1]) == user):
+				#if(str(row[2] == pw)):
+				if(str(row[2]) == pw):
 	def isMatch(self, pw):
 		self.cursor.execute("SELECT * FROM accounts ")
 		rows = self.cursor.fetchall()
@@ -29,5 +38,10 @@ class DataLogic:
 					return str(row[3])
 				else:
 					self.connection.commit()
+					return ""
+					#return mess
+	def insertData(self,user,pw,fn):
+		self.cursor.execute('Insert INTO accounts(USERNAME,PASSWORD,FULLNAME) VALUES(?,?,?)',(user,pw,fn))
+		self.connection.commit()
 					return mess
 	

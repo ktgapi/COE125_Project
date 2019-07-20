@@ -8,6 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import resources
+from datalogic import DataLogic
 import csv
 
 class Sign_Up(object):
@@ -127,6 +128,7 @@ class Sign_Up(object):
         self.FNLine.textChanged['QString'].connect(self.label_5.clear)
         self.ConPassLine.textChanged['QString'].connect(self.label_5.clear)
         QtCore.QMetaObject.connectSlotsByName(Form)
+        self.Dl = DataLogic()
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -151,6 +153,11 @@ class Sign_Up(object):
                  if password != password2 or password.isspace() is True or password == "":
                      self.label_5.setText("Passwords invalid or do not match! Try again")
                  else:
+                    self.Dl.insertData(username, password, fullname)
+                    self.label_5.setText("Registration Successful")
+    def UserCheck (self, Username):
+        found = self.Dl.isUserExist(Username)
+        return found
                      newData = [username, password, fullname]
                      with open('Accounts.csv', 'a', newline='') as f:
                          writer = csv.writer(f)
