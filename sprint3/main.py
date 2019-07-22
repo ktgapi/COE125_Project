@@ -10,19 +10,15 @@
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QFileDialog
-import businesslogic
+from PyQt5.QtGui import QPixmap
 import os, shutil
 from filedialog import file_browse
 
 folder = './images/sub'
 
 class Main_Program(object):
-    def BrowseWin(self):
-        self.Bwin = QtWidgets.QWidget()
-        self.ui = file_browse()
-        self.ui.setupUi(self.Bwin)
-        self.Bwin.show()
     def setupUi(self, MainWindow):
+        self.FileName = ""
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(400, 409)
         icon = QtGui.QIcon()
@@ -63,6 +59,7 @@ class Main_Program(object):
         self.label_3.setGeometry(QtCore.QRect(10, 40, 381, 211))
         self.label_3.setText("")
         self.label_3.setObjectName("label_3")
+        self.label_3.setScaledContents(True)
         self.pb_Generate.clicked.connect(self.generateDigit)
         self.pb_Evaluate.clicked.connect(self.evaluateImage)
         self.pb_Browse.clicked.connect(self.browseImage)
@@ -88,9 +85,11 @@ class Main_Program(object):
         self.pb_Generate.setText(_translate("MainWindow", "Generate"))
 
     def generateDigit(self):
+        import businesslogic
         businesslogic.testFromDataSet()
 
     def evaluateImage(self):
+        import businesslogic
         businesslogic.testFromUserInput()
 
 
@@ -103,7 +102,11 @@ class Main_Program(object):
                 elif os.path.isdir(file_path): shutil.rmtree(file_path)
             except Exception as e:
                 print(e)
-        self.BrowseWin()
+        fb = file_browse()
+        fb.openFileNameDialog()
+        pixmap = QPixmap(fb.fn)
+        print(pixmap)
+        self.label_3.setPixmap(pixmap)
         
     
 if __name__ == "__main__":

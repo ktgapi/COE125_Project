@@ -70,7 +70,7 @@ test_loader = torch.utils.data.DataLoader(
   batch_size=batch_size_test, shuffle=True)
 try:
     input_loader = torch.utils.data.DataLoader(
-          torchvision.datasets.ImageFolder('images', 
+        torchvision.datasets.ImageFolder('images', 
                              transform=torchvision.transforms.Compose([
 			       torchvision.transforms.Resize((28,28)),
 			       torchvision.transforms.Grayscale(),
