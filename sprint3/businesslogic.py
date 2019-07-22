@@ -4,6 +4,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 import matplotlib.pyplot as plt
+from main import Main_Program
 
 class Net(nn.Module):
     def __init__(self):
@@ -22,6 +23,11 @@ class Net(nn.Module):
         x = F.dropout(x, training=self.training)
         x = self.fc2(x)
         return F.log_softmax(x)
+
+def MainWin(self):
+        self.Mwin = QtWidgets.QMainWindow()
+        self.ui = Main_Program()
+        self.ui.setupUi(self.Mwin)
 
 
 n_epochs = 3
@@ -62,9 +68,9 @@ test_loader = torch.utils.data.DataLoader(
                                  (0.1307,), (0.3081,))
                              ])),
   batch_size=batch_size_test, shuffle=True)
-
-input_loader = torch.utils.data.DataLoader(
-  torchvision.datasets.ImageFolder('images', 
+try:
+    input_loader = torch.utils.data.DataLoader(
+          torchvision.datasets.ImageFolder('images', 
                              transform=torchvision.transforms.Compose([
 			       torchvision.transforms.Resize((28,28)),
 			       torchvision.transforms.Grayscale(),
@@ -73,9 +79,13 @@ input_loader = torch.utils.data.DataLoader(
                                  (0.1307,), (0.3081,))
                              ])),
   batch_size=batch_size_test, shuffle=True)
-
-examples = enumerate(input_loader)
+except Exception as e:
+    print(e)
+examples = enumerate(test_loader)
 batch_idx, (example_data, example_targets) = next(examples)
+
+own = enumerate(input_loader)
+batch_ldx, (own_data, own_targets) = next(own)
 
 '''
 network = Net()
@@ -143,18 +153,33 @@ plt.ylabel('negative log likelihood loss')
 plt.show()
 fig
 '''
+def testFromUserInput():
+	with torch.no_grad():
+	  output = network(own_data)
+	fig = plt.figure()
+	for i in range(1):
+	  plt.subplot(2,3,i+1)
+	  plt.tight_layout()
+	  plt.imshow(own_data[i][0], cmap='gray', interpolation='none')
+	  plt.title("Prediction: {}".format(
+	    output.data.max(1, keepdim=True)[1][i].item()))
+	  plt.xticks([])
+	  plt.yticks([])
+	plt.show()
+	fig
 
-with torch.no_grad():
-  output = network(example_data)
-fig = plt.figure()
-for i in range(6):
-  plt.subplot(2,3,i+1)
-  plt.tight_layout()
-  plt.imshow(example_data[i][0], cmap='gray', interpolation='none')
-  plt.title("Prediction: {}".format(
-    output.data.max(1, keepdim=True)[1][i].item()))
-  plt.xticks([])
-  plt.yticks([])
-  plt.show()
-fig
+def testFromDataSet():
+	with torch.no_grad():
+	  output = network(example_data)
+	fig = plt.figure()
+	for i in range(6):
+	  plt.subplot(2,3,i+1)
+	  plt.tight_layout()
+	  plt.imshow(example_data[i][0], cmap='gray', interpolation='none')
+	  plt.title("Prediction: {}".format(
+	    output.data.max(1, keepdim=True)[1][i].item()))
+	  plt.xticks([])
+	  plt.yticks([])
+	plt.show()
+	fig
 
