@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>433</width>
+    <height>503</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>433</width>
+    <height>503</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>433</width>
+    <height>503</height>
+   </size>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::DefaultContextMenu</enum>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>App</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../Downloads/Pics.qrc">
+    <normaloff>:/Images/Images/User.png</normaloff>:/Images/Images/User.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+font-family:century-gotchic;
+font-size:26px;
+
+}
+#Form{
+background-image: url(:/Images/Images/back.png);
+}
+QFrame
+{
+background:rgb(0,0,0,0.8);
+border-radius:30px;
+}
+QPushButton
+{
+color: rgb(46, 52, 54);
+background:#0575A2;
+border-radius:15px;
+
+}
+QToolButton
+{
+background:#0575A2;
+border-radius:40px;
+
+}
+QLabel
+{
+	color: rgb(238, 238, 236);
+
+}
+QPushButton:hover
+{
+color:white;
+background:rgb(50, 85, 162);
+border-radius:15px;
+
+}
+QLineEdit
+{
+font-family:century-gotchic;
+font-size:20px;
+background:transparent;
+color:rgb(238, 238, 236);
+border:none;
+border-bottom:1px solid rgb(238, 238, 236); 
+}</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>110</y>
+     <width>311</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="NextButton">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>224</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Next</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="LineEdit">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>130</y>
+      <width>271</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="RegButton">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>270</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Register</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Username</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>170</y>
+      <width>271</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 63 12pt &quot;FreeSans&quot;;
+color: rgb(196, 152, 64);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QToolButton" name="toolButton">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>60</y>
+     <width>81</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../../Downloads/Pics.qrc">
+     <normaloff>:/Images/Images/User.png</normaloff>:/Images/Images/User.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>120</width>
+     <height>120</height>
+    </size>
+   </property>
+   <property name="autoRaise">
+    <bool>false</bool>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>LineEdit</tabstop>
+  <tabstop>NextButton</tabstop>
+  <tabstop>RegButton</tabstop>
+  <tabstop>toolButton</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../Downloads/Pics.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>LineEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>label_3</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>259</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>83</x>
+     <y>296</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

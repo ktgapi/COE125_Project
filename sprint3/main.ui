@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>409</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Digit Recognition</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/logo/card.png</normaloff>:/logo/card.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(107, 126, 130);
+color: rgb(255, 255, 255);
+font: 75 10pt &quot;Kozuka Gothic Pr6N B&quot;;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pb_Browse">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>260</y>
+      <width>101</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(132, 181, 195);
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Browse</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pb_Evaluate">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>260</y>
+      <width>101</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(132, 181, 195);
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Evaluate</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>121</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Browse an Image</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_Name">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>0</y>
+      <width>381</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>300</y>
+      <width>191</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Evaluate from sample data</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pb_Generate">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>330</y>
+      <width>101</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(132, 181, 195);
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Generate</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>381</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="../mainbg.qrc"/>
+ </resources>
+ <connections/>
+</ui>
