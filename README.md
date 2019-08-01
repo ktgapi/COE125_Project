@@ -5,6 +5,8 @@ Requirements:
 - PyTorch
 - PyQt 5
 - MNIST Digit Dataset by http://yann.lecun.com/exdb/mnist/
+- Python Matplotlib
+- Python NumPy
 
 How to Run (Windows/ Linux)
 1. Download the latest sprint file (sprint 4).
