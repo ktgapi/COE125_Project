@@ -2,6 +2,7 @@ Digit Recognition
 
 Sample Account:
 Username: ktgapi
+
 Password: 123
 
 Pre-requirements:
@@ -15,15 +16,19 @@ Pre-requirements:
 Pre-requirements Installation for LINUX:
 1. Python
    Start by updating the packages list:
-      $ sudo apt update
-      $ sudo apt install software-properties-common
+   
+        $ sudo apt update
+      
+        $ sudo apt install software-properties-common
       
    Next, install Python
-      $ sudo apt install python3.7
+     
+        $ sudo apt install python3.7
       
    At this point, Python 3.7 is installed on your system.
    Verify it by typing:
-      $ python3.7 --version
+      
+        $ python3.7 --version
 
 How to Run (Windows/ Linux)
 1. Download the latest sprint file (sprint 4).
