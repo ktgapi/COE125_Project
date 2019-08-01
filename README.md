@@ -4,13 +4,26 @@ Sample Account:
 Username: ktgapi
 Password: 123
 
-Requirements:
+Pre-requirements:
 - Python 3.7.X
 - PyTorch
 - PyQt 5
 - MNIST Digit Dataset by http://yann.lecun.com/exdb/mnist/
 - Python Matplotlib
 - Python NumPy
+
+Pre-requirements Installation for LINUX:
+1. Python
+   Start by updating the packages list:
+      $ sudo apt update
+      $ sudo apt install software-properties-common
+      
+   Next, install Python
+      $ sudo apt install python3.7
+      
+   At this point, Python 3.7 is installed on your system.
+   Verify it by typing:
+      $ python3.7 --version
 
 How to Run (Windows/ Linux)
 1. Download the latest sprint file (sprint 4).
