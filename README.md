@@ -65,6 +65,10 @@ Pre-requirements Installation for LINUX:
 
          $ python3 -m pip install -U matplotlib
          
+ 6. NumPy
+      
+         $ sudo apt install python3-numpy
+         
 How to Run (Windows/ Linux)
 1. Download the latest sprint file (sprint 4).
 2. Assuming you have a Python environment ready for usage in your terminals (Windows/ Linux),
