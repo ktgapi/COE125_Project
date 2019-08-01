@@ -1,5 +1,9 @@
 Digit Recognition
- 
+
+Sample Account:
+Username: ktgapi
+Password: 123
+
 Requirements:
 - Python 3.7.X
 - PyTorch
