@@ -1,6 +1,7 @@
 Digit Recognition
 
 Sample Account:
+
 Username: ktgapi
 
 Password: 123
@@ -54,12 +55,15 @@ Pre-requirements Installation for LINUX:
 
    From the terminal, type:
       
-         sudo apt-get install python3-pyqt5 
+         $ sudo apt-get install python3-pyqt5 
          
-         sudo apt-get install pyqt5-dev-tools
+         $ sudo apt-get install pyqt5-dev-tools
          
-         sudo apt-get install qttools5-dev-tools
+         $ sudo apt-get install qttools5-dev-tools
          
+5. MatPlotLib
+
+         $ python3 -m pip install -U matplotlib
          
 How to Run (Windows/ Linux)
 1. Download the latest sprint file (sprint 4).
